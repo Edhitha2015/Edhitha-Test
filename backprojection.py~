@@ -8,10 +8,10 @@ def imInv ( imIn, inv):
 
 if __name__ == '__main__':
 
-	im = cv2.imread("test-images/DSC_0115.JPG")
+	im = cv2.imread("/home/praneeta/Downloads/DSC_0869.JPG")
 	im = cv2.resize(im, None, fx = 0.25, fy = 0.25)
 #	roi = im[200:300, 300:400] #random crop
-	roi = cv2.imread('roi-images/DSC_0115cropped.JPG') #proper random crop
+	roi = cv2.imread('/home/praneeta/Downloads/DSC_0869cropped.JPG') #proper random crop
 	
 	#roi => hsv, histogram, normalize
 	roiHsv = cv2.cvtColor( roi, cv2.COLOR_BGR2HSV)

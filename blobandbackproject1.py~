@@ -28,10 +28,10 @@ def extractblob(im):
 			if c>Decimal(4)/Decimal(2.5) or d>Decimal(4)/Decimal(2.5):
 			   continue
      			crop=im[y:y+h,x:x+w]
-     			cv2.imwrite("procima/crop%d.jpg"%(z),crop)
+     			cv2.imwrite("crop%d.jpg"%(z),crop)
      			cv2.imshow("crop%d"%(z),crop);
      			z=z+1;
-        cv2.imwrite("procima/windowtitled.JPG", im)
+        cv2.imwrite("windowtitled.JPG", im)
 	cv2.imshow("hello",im)
 	cv2.waitKey(0)
 
@@ -64,10 +64,10 @@ def backproject():
 	mask = cv2.inRange(hsv, np.array([5,90,50], dtype = np.uint8), np.array([49,255,205], dtype = np.uint8)) 
 	mask_inv = cv2.bitwise_not(mask)
 	res = cv2.bitwise_and(res1, res1, mask = mask_inv)
-	cv2.imwrite("procima/final.jpg", res)
+	cv2.imwrite("final.jpg", res)
 	kernel=cv2.getStructuringElement(cv2.MORPH_ELLIPSE,(3,3))
 	res=cv2.erode(res,kernel,iterations=1)
-	cv2.imwrite("procima/bckP.JPG",res)
+	cv2.imwrite("bckP.JPG",res)
 	extractblob(res)
 
 	
