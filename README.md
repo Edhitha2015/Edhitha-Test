@@ -18,4 +18,7 @@ coutours - finds target
 remaining tasks - detect color, detect aplhanumeric character, detect gps coordinates, get workflow. 
 (deadline - 15th Feb) 
 
+test-images - for all the images
+procima - for the blobs(all)
+
 booooooooooooooooooooo 
