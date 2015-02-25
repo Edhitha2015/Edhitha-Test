@@ -1,6 +1,56 @@
 import cv2
 import numpy as np
 from decimal import *
+import Tkinter, Tkconstants, tkFileDialog
+class TkFileDialogExample(Tkinter.Frame):
+	def __init__(self, root):
+
+		Tkinter.Frame.__init__(self, root)
+
+		# options for buttons
+		button_opt = {'fill': Tkconstants.BOTH, 'padx': 5, 'pady': 5}
+
+		# define buttons
+		Tkinter.Button(self, text='Blobandbackproject1', command=self.askopenfilenames).pack(**button_opt)
+
+		# define options for opening or saving a file
+		self.file_opt = options = {}
+		options['defaultextension'] = '.txt'
+		options['filetypes'] = [('all files', '.*'), ('text files', '.txt')]
+		options['initialdir'] = 'C:\\'
+		#options['initialfile'] = 'myfile.txt'
+		options['parent'] = root
+		options['title'] = 'Blobandbackproject1'
+
+		# This is only available on the Macintosh, and only when Navigation Services are installed.
+		#options['message'] = 'message'
+
+		# if you use the multiple file version of the module functions this option is set automatically.
+		#options['multiple'] = 1
+
+		# defining options for opening a directory
+		self.dir_opt = options = {}
+		options['initialdir'] = 'C:\\'
+		options['mustexist'] = False
+		options['parent'] = root
+		options['title'] = 'Blobandbackproject1'
+
+	def askopenfilenames(self):
+
+		"""Returns an opened file in read mode.
+		This time the dialog just returns a filename and the file is opened by your own code.
+		"""
+
+		# get filename
+		filename = tkFileDialog.askopenfilenames(**self.file_opt)
+		print filename
+		for f in filename:
+			print f
+			backproject(f)
+		# open file on your own
+		#if filename:
+		# return open(filename, 'r')
+
 def extractblob(im):
 	#print im.shape
 	imgray = cv2.cvtColor(im,cv2.COLOR_BGR2GRAY)
@@ -35,8 +85,8 @@ def extractblob(im):
 	cv2.imshow("hello",im)
 	cv2.waitKey(0)
 
-def backproject():
-        im = cv2.imread("test-images/DSC_0115.JPG")
+def backproject(filename):
+        im = cv2.imread(filename)
 	#im = cv2.resize(im, None, fx = 0.25, fy = 0.25)
 	
 	#image => hsv, hist
@@ -71,7 +121,9 @@ def backproject():
 	extractblob(res)
 
 	
-if __name__ == '__main__':
-	 backproject()
+if __name__=='__main__':
+  root = Tkinter.Tk()
+  TkFileDialogExample(root).pack()
+  root.mainloop()
 	
 

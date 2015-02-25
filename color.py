@@ -5,7 +5,7 @@ import utils
 import cv2
 import webcolors1
 
-image = cv2.imread('/home/sony/final/crop0.jpg')
+image = cv2.imread('blobby/crop0.jpg')
 image = cv2.cvtColor(image, cv2.COLOR_BGR2RGB)
 plt.figure()
 plt.axis("off")
