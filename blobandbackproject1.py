@@ -2,7 +2,7 @@ import cv2
 import numpy as np
 from decimal import *
 import Tkinter, Tkconstants, tkFileDialog
-class TkFileDialogExample(Tkinter.Frame):
+'''class TkFileDialogExample(Tkinter.Frame):
 	def __init__(self, root):
 
 		Tkinter.Frame.__init__(self, root)
@@ -49,7 +49,7 @@ class TkFileDialogExample(Tkinter.Frame):
 			backproject(f)
 		# open file on your own
 		#if filename:
-		# return open(filename, 'r')
+		# return open(filename, 'r')'''
 
 def extractblob(im):
 	#print im.shape
@@ -121,9 +121,9 @@ def backproject(filename):
 	extractblob(res)
 
 	
-if __name__=='__main__':
+'''if __name__=='__main__':
   root = Tkinter.Tk()
   TkFileDialogExample(root).pack()
-  root.mainloop()
+  root.mainloop()'''
 	
 

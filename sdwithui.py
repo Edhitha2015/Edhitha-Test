@@ -1,12 +1,8 @@
 import numpy as np
 import cv2
 import Tkinter, Tkconstants, tkFileDialog
-from sklearn.cluster import KMeans
-import matplotlib.pyplot as plt
-import utils
-import webcolors1
 
-'''def shapedetect(filename):
+def shapedetect(filename):
 	
 	img = cv2.imread(filename)
 	gray = cv2.imread(filename,0)
@@ -45,27 +41,8 @@ import webcolors1
 	cv2.imshow('img',img)
 	cv2.waitKey(0)
 	cv2.destroyAllWindows()
-'''
-def color(filename):
-	image = cv2.imread(filename)
-	image = cv2.cvtColor(image, cv2.COLOR_BGR2RGB)
-	plt.figure()
-	plt.axis("off")
-	plt.imshow(image)
-	image = image.reshape((image.shape[0] * image.shape[1], 3))
-	clt = KMeans(n_clusters = 5)
-	clt.fit(image)
 
-	hist = utils.centroid_histogram(clt)
-
-	bar = utils.plot_colors(hist, clt.cluster_centers_)
-
-	plt.figure()
-	plt.axis("off")
-	plt.imshow(bar)
-	plt.show()
-
-'''class TkFileDialogExample(Tkinter.Frame):
+class TkFileDialogExample(Tkinter.Frame):
 	def __init__(self, root):
 
 		Tkinter.Frame.__init__(self, root)
@@ -74,7 +51,7 @@ def color(filename):
 		button_opt = {'fill': Tkconstants.BOTH, 'padx': 5, 'pady': 5}
 
 		# define buttons
-		Tkinter.Button(self, text='color.py', command=self.askopenfilenames).pack(**button_opt)
+		Tkinter.Button(self, text='askopenfilenames', command=self.askopenfilenames).pack(**button_opt)
 
 		# define options for opening or saving a file
 		self.file_opt = options = {}
@@ -83,7 +60,7 @@ def color(filename):
 		options['initialdir'] = 'C:\\'
 		#options['initialfile'] = 'myfile.txt'
 		options['parent'] = root
-		options['title'] = 'Finding the color'
+		options['title'] = 'This is a title'
 
 		# This is only available on the Macintosh, and only when Navigation Services are installed.
 		#options['message'] = 'message'
@@ -96,7 +73,7 @@ def color(filename):
 		options['initialdir'] = 'C:\\'
 		options['mustexist'] = False
 		options['parent'] = root
-		options['title'] = 'Finding the color'
+		options['title'] = 'This is a title'
 
 	def askopenfilenames(self):
 
@@ -109,7 +86,7 @@ def color(filename):
 		print filename
 		for f in filename:
 			print f
-			color(f)
+			shapedetect(f)
 		# open file on your own
 		#if filename:
 		# return open(filename, 'r')
@@ -117,4 +94,4 @@ def color(filename):
 if __name__=='__main__':
   root = Tkinter.Tk()
   TkFileDialogExample(root).pack()
-  root.mainloop()'''
+  root.mainloop()

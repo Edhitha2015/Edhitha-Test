@@ -47,8 +47,8 @@ def latlon(img):
 
 
 
-if __name__ == "__main__":
-    image = Image.open("/home/sony/DSC_0869cropped.JPG")
+'''if __name__ == "__main__":
+    image = Image.open("test-images/DSC_0884.JPG")
    
     #print exif_data
-    print latlon(image)
+    print latlon(image)'''

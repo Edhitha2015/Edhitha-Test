@@ -21,4 +21,8 @@ remaining tasks - detect color, detect aplhanumeric character, detect gps coordi
 test-images - for all the images
 procima - for the blobs(all)
 
+Added dashboard file = Every task in one window :D - Mostly for manual layer. 
+
+Have to work on auto layer UI. 
+
 booooooooooooooooooooo 
