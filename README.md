@@ -34,5 +34,5 @@ Auto Layer - Working on it.
 So the semi-auto Layer is 70 % done. (Just file sequencing for blob extraction/ folders left) 
 Fully Manual Layer is 50 % Done. (Going to prev image not working) - [Look at slideshow0.py]
 
-Updated folder - Dynamic pull and push. [HANDLE] 
+Updated folder - Dynamic pull and push. [HANDLE] - HANDLED :)  
 booooooooooooooooooooo 
